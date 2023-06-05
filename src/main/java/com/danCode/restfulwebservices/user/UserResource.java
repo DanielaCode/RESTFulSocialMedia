@@ -43,4 +43,9 @@ public class UserResource {
         //even better the location of the created object is returned in location header response
         return ResponseEntity.created(location).build();
     }
+
+    @DeleteMapping("/users/{id}")
+    public void deleteById(@PathVariable int id){
+         service.deleteById(id);
+    }
 }
