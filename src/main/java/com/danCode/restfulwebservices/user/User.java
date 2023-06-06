@@ -7,9 +7,9 @@ import java.time.LocalDate;
 
 public class User {
     private Integer id;
-    @Size(min=2)
+    @Size(min=2, message = "at least 2 characters")
     private String name;
-    @Past
+    @Past(message = "birthday is only in the past")
     private LocalDate birthDate;
 
     public User(Integer id, String name, LocalDate birthDate) {
